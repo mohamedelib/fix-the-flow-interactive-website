@@ -1,0 +1,13 @@
+
+@font-face {
+  font-family: "pixelfont";
+  src: url(./PixelFont-Regular.otf)
+}
+
+#titel{
+    font-family: "pixelfont";
+}
+
+p{
+font-family: "pixelfont";
+}
