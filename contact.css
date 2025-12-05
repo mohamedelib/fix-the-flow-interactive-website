@@ -313,23 +313,21 @@ button:hover {
 .footerlist {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   padding: 0;
 }
 
 .contact {
   padding-top: 20px;
-}
-
-@media (min-width: 925px) {
-  .contact {
-    display: flex;
+      display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-}
+
+  
+
 
 .emaill {
   padding: 9px 25px;
@@ -341,8 +339,15 @@ button:hover {
   color: white;
   text-align: center;
   min-width: 200px;
+  margin: 0 auto;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--secondary-color-darkmode);
+  }
 }
 
-.emaill:hover {
-  background-color: var(--secondary-color-darkmode);
+.emailicon {
+  width: 100%;
+  max-width: 100px;
 }
