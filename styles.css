@@ -348,25 +348,42 @@ nav[popover] .links {
 /* 9. Footer */
 /* ------------------------------------ */
 
-.footer {
+footer {
   background: var(--primary-color-dark);
   color: white;
   padding: 20px;
   list-style-type: none;
 }
 
-.footer li,
-.footer a {
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer li {
+  padding: 0 15px;
+  margin-bottom: 16px;
+}
+
+footer a {
+  font-size: 14px;
+  font-weight: 500;
   color: white;
 }
 
-.footerlist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
+footer p {
+  text-align: center;
 }
+
 
 .contact {
   padding-top: 20px;
@@ -375,28 +392,6 @@ nav[popover] .links {
     justify-content: center;
     align-items: center;
   }
-
-  
-
-
-.emaill {
-  padding: 9px 25px;
-  background-color: var(--secondary-color-lightmode);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  color: white;
-  text-align: center;
-  min-width: 200px;
-  margin: 0 auto;
-  justify-content: center;
-
-  &:hover {
-    background-color: var(--secondary-color-darkmode);
-  }
-}
-
 .emailicon {
   width: 100%;
   max-width: 100px;
