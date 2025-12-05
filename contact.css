@@ -333,3 +333,7 @@ button:hover {
     background-color: var(--secondary-color-darkmode);
   }
 }
+
+.headingg{
+  font-family: "Montserrat", sans-serif;
+}

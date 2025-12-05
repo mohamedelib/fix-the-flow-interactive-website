@@ -236,6 +236,8 @@ h2 {
 
 .welkom {
   text-align: left;
+  font-family: "Montserrat", sans-serif;
+  
 }
 #intro {
   padding: 2em;
@@ -336,5 +338,14 @@ h2 {
 }
 
 .welkom h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+#nieuwsheader{
+font-family: "Montserrat", sans-serif;
+}
+
+.headingscholen{
   font-family: "Montserrat", sans-serif;
 }
