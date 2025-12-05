@@ -1,3 +1,7 @@
+/* ------------------------------------ */
+/* 1. Imports en resets */
+/* ------------------------------------ */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
 
 * {
@@ -15,22 +19,14 @@ p {
   max-width: 65ch;
 }
 
-.cta {
-  display: none;
-  @media (min-width: 925px) {
-    display: inline-block;
-    background: var(--primary-color-dark);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-  }
-
-  &:hover {
-    background: var(--secondary-color-darkmode);
-  }
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
 }
+
+/* ------------------------------------ */
+/* 2. Algemene tekst en links */
+/* ------------------------------------ */
 
 li,
 a {
@@ -41,20 +37,21 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+/* ------------------------------------ */
+/* 3. Header + navigatie */
+/* ------------------------------------ */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 5%;
   background-color: #d9d9d9;
-}
-
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
-}
-nav {
-  position: relative;
 }
 
 .navlogo {
@@ -65,19 +62,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-#hrefbut {
-  background: var(--primary-color-dark);
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
 
-.hamburger {
-  max-width: 80px;
-}
 .navlogo p {
   font-size: 11px;
   text-align: center;
@@ -85,15 +70,26 @@ nav {
     font-size: 13px;
   }
 }
+
 .navlogo:focus {
   outline: 2px solid var(--primary-color-dark);
   outline-offset: 4px;
 }
 
+.hamburger {
+  max-width: 80px;
+}
+
+nav {
+  position: relative;
+}
+
+/* Links in desktopmenu */
 .links {
   list-style: none;
   display: flex;
 }
+
 .links li {
   display: flex;
   padding: 0 20px;
@@ -111,10 +107,27 @@ nav {
   }
 }
 
-nav[popover] {
-  /*[] zijn een CSS-attribuutselector*/
+/* Hamburger button */
+button[popovertarget="menu"] {
+  all: unset;
+  cursor: pointer;
+
   @media (min-width: 925px) {
-    display: block; /* de navigatie met popover attribuut wordt zichtbaar als normaal blok: https://medium.com/@ayshaismail021/understanding-css-display-property-block-none-inline-and-inline-block-4f8f3bd27d26*/
+    display: none;
+  }
+}
+
+/* Verberg contactlink op desktop */
+#contacthref {
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+
+/* Popover navigatie styling */
+nav[popover] {
+  @media (min-width: 925px) {
+    display: block;
     border: none;
     background-color: #d9d9d9;
   }
@@ -122,25 +135,12 @@ nav[popover] {
 
 nav[popover] .links {
   @media (min-width: 925px) {
-    display: flex; /*De <ul> wordt geflext vanaf een schermgrootte van 1060px*/
+    display: flex;
     flex-direction: row;
   }
 }
 
-button[popovertarget="menu"] {
-  all: unset;
-  cursor: pointer;
-  @media (min-width: 925px) {
-    display: none; /*Hiermee verberg je de hamburger menu knop vanaf een schermgrootte van 1060px*/
-  }
-}
-
-#contacthref {
-  @media (min-width: 925px) {
-    display: none;
-  }
-}
-
+/* Close menu knop */
 .close-menu {
   background-color: var(---primary-color-dark);
   all: unset;
@@ -148,6 +148,7 @@ button[popovertarget="menu"] {
   right: 1em;
 }
 
+/* Open popover */
 :popover-open {
   display: flex;
   height: 100%;
@@ -168,6 +169,42 @@ button[popovertarget="menu"] {
   font-size: 30px;
 }
 
+/* ------------------------------------ */
+/* 4. CTA knoppen */
+/* ------------------------------------ */
+
+.cta {
+  display: none;
+
+  @media (min-width: 925px) {
+    display: inline-block;
+    background: var(--primary-color-dark);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
+}
+
+#hrefbut {
+  background: var(--primary-color-dark);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ------------------------------------ */
+/* 5. Banner */
+/* ------------------------------------ */
+
 .banner {
   padding: 6.5rem 0;
   background-image: url("./fotos/banner.jpg");
@@ -175,7 +212,6 @@ button[popovertarget="menu"] {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* height: 200px; */
   background-blend-mode: darken;
   background-color: rgba(0, 0, 0, 0.7);
   border: 3px solid black;
@@ -193,28 +229,19 @@ button[popovertarget="menu"] {
   color: white;
 }
 
-h2 {
-  text-align: center;
-  padding: 10px;
-}
-.artikel {
-  max-width: 15rem;
-  line-height: 1.4;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 25px;
+.banner h2 {
+  font-family: "Montserrat", sans-serif;
 }
 
-.artikel a {
-  color: #2b5e60;
-  display: block;
-  margin-top: 10px;
-}
+/* ------------------------------------ */
+/* 6. Artikelen */
+/* ------------------------------------ */
 
 #artikelen {
   h2 {
     grid-column: 1/ -1;
   }
+
   .artikel:nth-of-type(3) {
     grid-column: span 2;
   }
@@ -234,36 +261,46 @@ h2 {
   }
 }
 
+.artikel {
+  max-width: 15rem;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+}
+
+.artikel a {
+  color: #2b5e60;
+  display: block;
+  margin-top: 10px;
+}
+
+#nieuwsheader {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ------------------------------------ */
+/* 7. Intro sectie */
+/* ------------------------------------ */
+
 .welkom {
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  
 }
+
 #intro {
   padding: 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
+
 @media (min-width: 768px) {
   #intro {
     flex-direction: row;
   }
 }
 
-.deelscholen {
-  @media (min-width: 1189px) {
-    display: flex;
-    flex-direction: row;
-  }
-}
-.deelscholen img {
-  @media (min-width: 1189px) {
-    height: 250px;
-    width: 450px;
-    padding-bottom: 15px;
-  }
-}
 .intro-foto {
   width: 100%;
   height: 100%;
@@ -277,11 +314,39 @@ h2 {
     max-height: 40rem;
   }
 }
+
+/* ------------------------------------ */
+/* 8. Scholen sectie */
+/* ------------------------------------ */
+
+.deelscholen {
+  @media (min-width: 1189px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.deelscholen img {
+  @media (min-width: 1189px) {
+    height: 250px;
+    width: 450px;
+    padding-bottom: 15px;
+  }
+}
+
 #scholen img {
   display: block;
   margin: auto;
   max-width: 100%;
 }
+
+.headingscholen {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ------------------------------------ */
+/* 9. Footer */
+/* ------------------------------------ */
 
 .footer {
   background: var(--primary-color-dark);
@@ -289,10 +354,8 @@ h2 {
   padding: 20px;
   list-style-type: none;
 }
-.footer li {
-  color: white;
-}
 
+.footer li,
 .footer a {
   color: white;
 }
@@ -307,6 +370,7 @@ h2 {
 
 .contact {
   padding-top: 20px;
+
   @media (min-width: 925px) {
     display: flex;
     flex-direction: column;
@@ -333,19 +397,7 @@ h2 {
   }
 }
 
-.banner h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
-.welkom h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
-
-#nieuwsheader{
-font-family: "Montserrat", sans-serif;
-}
-
-.headingscholen{
-  font-family: "Montserrat", sans-serif;
+.emailicon {
+  width: 100%;
+  max-width: 100px;
 }

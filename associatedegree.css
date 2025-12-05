@@ -1,3 +1,7 @@
+/* -------------------------------------- */
+/* 1. IMPORTS & RESETS */
+/* -------------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
 * {
@@ -6,9 +10,9 @@
   padding: 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body{
@@ -16,12 +20,14 @@ body{
   line-height: 1.5;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
 }
 
-/* ------------ HEADER / NAV / BURGER ------------ */
+/* -------------------------------------- */
+/* 2. ALGEMENE TEKST / TYPOGRAFIE */
+/* -------------------------------------- */
 
 li, a{
   font-family: "Montserrat", sans-serif;
@@ -30,6 +36,28 @@ li, a{
   color: #000000;
   text-decoration: none;
 }
+
+p {
+  max-width: 65ch;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+main h1 {
+  Font-family: "Montserrat", sans-serif;
+}
+
+.headingg{
+  font-family: "Montserrat", sans-serif;
+}
+
+/* -------------------------------------- */
+/* 3. HEADER / NAV / BURGER */
+/* -------------------------------------- */
 
 header{
   display: flex;
@@ -56,10 +84,6 @@ nav {
   color: black;
 }
 
-.hamburger{
-  max-width: 80px;
-}
-
 .navlogo p{
   font-size: 11px;
   text-align: center;
@@ -74,6 +98,10 @@ nav {
 .navlogo:focus {
   outline: 2px solid var(--primary-color-dark);
   outline-offset: 4px;
+}
+
+.hamburger{
+  max-width: 80px;
 }
 
 .links{
@@ -95,9 +123,10 @@ nav {
 
   @media (max-width: 925px) {
     color: var(--secondary-color-lightmode)
-   
   }
 }
+
+/* CTA in header */
 
 .cta {
   display: none;
@@ -119,7 +148,9 @@ nav {
   background: var(--primary-color-dark)
 }
 
-/* popover navigatie */
+/* -------------------------------------- */
+/* 4. POPOVER NAVIGATIE */
+/* -------------------------------------- */
 
 nav[popover] {
   @media (min-width: 925px) {
@@ -176,19 +207,15 @@ button[popovertarget="menu"] {
 :popover-open a {
   font-size: 30px;
 }
+
 /* nav[popover] .links li a:hover{
  color: var(--secondary-color-lightmode) 
 } */
 
-/* ------------ PAGINA SPECIFIEK (ASSOCIATEDEGREE) ------------ */
+/* -------------------------------------- */
+/* 5. PAGINA SPECIFIEK (ASSOCIATE DEGREE) */
+/* -------------------------------------- */
 
-h1 {
-  text-align: center;
-  padding-bottom: 20px;
-}
-.headingg{
-  font-family: "Montserrat", sans-serif;
-}
 main {
   padding-left: 30px;
   padding-right: 30px;
@@ -198,12 +225,9 @@ main h2{
   padding-bottom: 10px;
 }
 
-p {
-  max-width: 65ch;
-  margin-bottom: 1.2rem;
-}
-
-/* ------------ FOOTER / CONTACT ------------ */
+/* -------------------------------------- */
+/* 6. FOOTER / CONTACT */
+/* -------------------------------------- */
 
 .footer {
   background: var(--primary-color-dark);
@@ -243,22 +267,16 @@ p {
 
 .emaill {
    padding: 9px 25px;
-    background-color: var(--secondary-color-lightmode);
-    border:none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    color: white;
-    text-align: center;
-    min-width: 200px;
-    
+   background-color: var(--secondary-color-lightmode);
+   border:none;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: all 0.3s ease 0s;
+   color: white;
+   text-align: center;
+   min-width: 200px;
 
-
-&:hover{
-  background-color: var(--secondary-color-darkmode);
-}
-}
-
-main h1 {
-  Font-family: "Montserrat", sans-serif;
+   &:hover{
+     background-color: var(--secondary-color-darkmode);
+   }
 }

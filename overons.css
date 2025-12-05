@@ -1,18 +1,29 @@
+/* ----------------------------------- */
+/* 1. IMPORT & RESETS */
+/* ----------------------------------- */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
-}
+
 body {
   background-color: #d9d9d9;
   line-height: 1.5;
 }
-/* Header */
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ----------------------------------- */
+/* 2. BASIS TEKST & TYPOGRAFIE */
+/* ----------------------------------- */
+
 p {
   max-width: 65ch;
 }
@@ -26,6 +37,15 @@ a {
   text-decoration: none;
 }
 
+.headingg {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ----------------------------------- */
+/* 3. HEADER / NAV / BURGER */
+/* ----------------------------------- */
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -106,8 +126,8 @@ nav {
   }
 }
 
+/* attribuutselector */
 nav[popover] {
-  /* attribuutselector */
 }
 
 @media (min-width: 925px) {
@@ -164,6 +184,7 @@ nav[popover] .links {
   font-size: 30px;
 }
 
+/* CTA-knop in header */
 .cta {
   display: none;
   @media (min-width: 925px) {
@@ -183,10 +204,22 @@ nav[popover] .links {
 
 /* Einde header */
 
+/* ----------------------------------- */
+/* 4. OVER ONS SECTIE */
+/* ----------------------------------- */
 
-.headingg{
-  font-family: "Montserrat", sans-serif;
+#overons {
+  padding-left: 20px;
 }
+
+#overons p {
+  padding-bottom: 10px;
+}
+
+/* ----------------------------------- */
+/* 5. TEAM GRID */
+/* ----------------------------------- */
+
 /* Grid */
 .team {
   text-align: center;
@@ -238,13 +271,9 @@ nav[popover] .links {
   text-decoration: underline;
 }
 
-#overons {
-  padding-left: 20px;
-}
-
-#overons p {
-  padding-bottom: 10px;
-}
+/* ----------------------------------- */
+/* 6. FOOTER */
+/* ----------------------------------- */
 
 /* Footer */
 .footer {
