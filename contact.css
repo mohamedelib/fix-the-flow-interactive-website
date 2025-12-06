@@ -122,6 +122,9 @@ form button[type="submit"] {
   cursor: pointer;
   font-size: 16px;
 }
+  form button[type="submit"]:hover {
+  background: var(--secondary-color-darkmode);
+}
 
 /* Checkmark feedback */
 .checkmark {
