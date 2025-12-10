@@ -60,7 +60,40 @@
           <li class="nav-item" id="contacthref">
             <a href="./contact.html">Contact</a>
           </li>
+
+          <li class="nav-item">
+            <button class="search-button">
+              <img src="fotos/search.png" alt="zoek icoon" />
+            </button>
+          </li>
         </ul>
+
+        <search class="zoeken">
+          <button class="terug-button">
+            <img
+              src="fotos/kruis.png"
+              alt="Venster sluiten"
+              width="20"
+              height="20"
+            />
+            Sluit
+          </button>
+
+          <h2>Zoek relevante informatie met trefwoorden</h2>
+          <form class="displayy">
+            <label>
+              <input type="search" placeholder="Zoek trefwoord" />
+            </label>
+            <a href="index.html">
+              <img
+                src="fotos/searchh.png"
+                width="50"
+                height="50"
+                alt="zoek icoon"
+              />
+            </a>
+          </form>
+        </search>
       </nav>
       <a class="cta" href="contact.html">Contact</a>
     </header>
@@ -153,9 +186,9 @@
     </main>
 
     <!-- Footer -->
-     <footer>
-    <div class="container">
-      <ul class="flex-row">
+    <footer>
+      <div class="container">
+        <ul class="flex-row">
           <li class="nav-item">
             <a href="./index.html">Home</a>
           </li>
@@ -175,13 +208,33 @@
             <a href="./contact.html">Contact</a>
           </li>
         </ul>
-
       </div>
       <div class="contact">
         <p><strong>Contact</strong></p>
-        <a href="mailto:platformassociatedegrees@outlook.com"><img class="emailicon" src="./fotos/email.png"> </a>
+        <a href="mailto:platformassociatedegrees@outlook.com"
+          ><img class="emailicon" src="./fotos/email.png" />
+        </a>
         <p>&copy; 2019 Overlegplatform Associate Degrees</p>
       </div>
     </footer>
+    <script>
+      // 1: selecteer de button
+      const openSearchForm = document.querySelector(".search-button");
+      const theSearch = document.querySelector(".zoeken");
+      const closeSearchForm = document.querySelector(".terug-button");
+
+      // 2: wacht op een klik
+      openSearchForm.addEventListener("click", openSearch);
+      closeSearchForm.addEventListener("click", closeSearch);
+
+      // Het openen en sluiten van het zoek menu
+      function openSearch() {
+        theSearch.classList.add("toonSearch");
+      }
+
+      function closeSearch() {
+        theSearch.classList.remove("toonSearch"); //voor het verwijderen van de search balk zodra je op 'terug' klikt
+      }
+    </script>
   </body>
 </html>
