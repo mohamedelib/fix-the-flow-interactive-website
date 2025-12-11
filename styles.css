@@ -223,7 +223,7 @@ ul {
 
 .terug-button {
   all: unset;
-  color: red;
+  color: #fff;
   &:hover {
     cursor: pointer;
   }
