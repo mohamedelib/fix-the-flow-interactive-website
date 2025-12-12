@@ -24,6 +24,10 @@ p {
   left: -9999px;
 }
 
+main{
+padding-bottom: 30px;
+}
+
 /* ------------------------------------ */
 /* 2. Algemene tekst en links */
 /* ------------------------------------ */
@@ -384,22 +388,43 @@ ul {
 /* 8. Scholen sectie */
 /* ------------------------------------ */
 
+.deelbutton{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: var(--primary-color-dark);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
 .deelscholen {
   @media (min-width: 1189px) {
     display: flex;
     flex-direction: row;
   }
+   display: none;
+}
+
+.yay{
+  display: block;
+  padding-top: 20px;
 }
 
 .deelscholen img {
-  @media (min-width: 1189px) {
-    height: 250px;
-    width: 450px;
+
+
     padding-bottom: 15px;
-  }
+
 }
 
 #scholen img {
+  display: none;
   display: block;
   margin: auto;
   max-width: 100%;
