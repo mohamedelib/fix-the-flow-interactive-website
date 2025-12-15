@@ -281,11 +281,11 @@ ul {
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-}
-  #hrefbut:hover {
+
+  &:hover {
     background: var(--secondary-color-darkmode);
   }
-
+}
 
 
 /* ------------------------------------ */
