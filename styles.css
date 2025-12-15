@@ -233,7 +233,10 @@ ul {
     cursor: pointer;
   }
 }
-
+.search-button{
+  display: flex;
+  flex-direction: column;
+}
 .search-button img{
   width: 50px;
   height: 50px;
