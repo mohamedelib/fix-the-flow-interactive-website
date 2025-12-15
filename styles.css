@@ -276,6 +276,11 @@ ul {
   cursor: pointer;
   font-size: 16px;
 }
+  #hrefbut:hover {
+    background: var(--secondary-color-darkmode);
+  }
+
+
 
 /* ------------------------------------ */
 /* 5. Banner */
@@ -409,6 +414,9 @@ ul {
 
 }
 
+.deelbutton:hover{
+background: var(--secondary-color-darkmode);
+}
 
 .deelscholen {
   @media (min-width: 1189px) {
