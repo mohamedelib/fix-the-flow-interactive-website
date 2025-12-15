@@ -84,6 +84,7 @@ header {
   max-width: 80px;
 }
 
+
 nav {
   position: relative;
 }
@@ -114,11 +115,16 @@ nav {
 /* Hamburger button */
 button[popovertarget="menu"] {
   all: unset;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 
   @media (min-width: 925px) {
     display: none;
   }
+}
+button[popovertarget="menu"] label{
+margin: 0 auto;
 }
 
 /* Verberg contactlink op desktop */
