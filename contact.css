@@ -268,6 +268,76 @@ button[popovertarget="menu"] {
   font-size: 30px;
 }
 
+/* searchbutton */
+/* Zoek button */
+button {
+  all: unset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.zoeken.toonSearch {
+  translate: 0% 0%; /* Search scherm komt in beeld na klik */
+}
+
+.displayy {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.zoeken {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: translate 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(98, 98, 98, 0.8);
+  translate: 0% -100%; /*Search scherm verdwijnt buiten beeld*/
+}
+
+input[type="search"] {
+  height: 3em;
+  width: 30em;
+}
+
+.zoeken input::placeholder {
+  text-transform: uppercase;
+  text-align: start;
+}
+
+search.zoeken h2 {
+  color: white;
+  padding-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+}
+
+.terug-button {
+  all: unset;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search-button img{
+  width: 50px;
+  height: 50px;
+}
+#feedback {
+  color: var(--secondary-color-lightmode)
+}
+
 /* -------------------------------------------------- */
 /* 7. CTA BUTTON */
 /* -------------------------------------------------- */

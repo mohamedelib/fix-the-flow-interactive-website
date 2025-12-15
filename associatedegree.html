@@ -29,7 +29,7 @@
                      <a href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                     <a href="./associatedegree.html">Associate Degree</a>
+                     <a href="./associatedegree.html" id="feedback">Associate Degree</a>
                     </li>
                     <li class="nav-item">
                      <a href="#">Nieuws</a>
@@ -101,7 +101,7 @@ De flexibele doorstroom maakt de Associate degree geschikt voor studenten die ze
             <a href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a href="./associatedegree.html">Associate Degree</a>
+            <a href="./associatedegree.html" >Associate Degree</a>
           </li>
           <li class="nav-item">
             <a href="#">Nieuws</a>
@@ -115,6 +115,7 @@ De flexibele doorstroom maakt de Associate degree geschikt voor studenten die ze
           <li class="nav-item" id="contacthref">
             <a href="./contact.html">Contact</a>
           </li>
+          
         </ul>
 
       </div>
@@ -124,6 +125,24 @@ De flexibele doorstroom maakt de Associate degree geschikt voor studenten die ze
         <p>&copy; 2019 Overlegplatform Associate Degrees</p>
       </div>
     </footer>
+ <script>
+      // 1: selecteer de button
+      const openSearchForm = document.querySelector(".search-button");
+      const theSearch = document.querySelector(".zoeken");
+      const closeSearchForm = document.querySelector(".terug-button");
 
+      // 2: wacht op een klik
+      openSearchForm.addEventListener("click", openSearch);
+      closeSearchForm.addEventListener("click", closeSearch);
+
+      // Het openen en sluiten van het zoek menu
+      function openSearch() {
+        theSearch.classList.add("toonSearch");
+      }
+
+      function closeSearch() {
+        theSearch.classList.remove("toonSearch"); //voor het verwijderen van de search balk zodra je op 'terug' klikt
+      }
+    </script>
 </body>
 </html>

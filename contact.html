@@ -59,11 +59,44 @@
             <a href="./overons.html">Over ons</a>
           </li>
           <li class="nav-item" id="contacthref">
-            <a href="./contact.html">Contact</a>
+            <a  href="./contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button class="search-button">
+              <img src="./fotos/search.png" alt="zoek icoon" />
+            </button>
           </li>
         </ul>
+
+        <search class="zoeken">
+          <button class="terug-button">
+            <img
+              src="fotos/kruis.png"
+              alt="Venster sluiten"
+              width="20"
+              height="20"
+            />
+            Sluit
+          </button>
+
+          <h2>Zoek relevante informatie met trefwoorden</h2>
+          <form class="displayy">
+            <label>
+              <input type="search" placeholder="Zoek een artikel" />
+            </label>
+            <a href="index.html">
+              <img
+                src="fotos/searchh.png"
+                alt="zoek icoon"
+                class="zoekbut"
+                width="50"
+              />
+            </a>
+          </form>
+        </search>
+        </ul>
       </nav>
-      <a class="cta" href="contact.html">Contact</a>
+      <a id="feedback" class="cta" href="contact.html">Contact</a>
     </header>
     <main>
       <h1 class="visually-hidden">Overlegplatform Associate Degree</h1>
@@ -132,5 +165,24 @@
         <p>&copy; 2019 Overlegplatform Associate Degrees</p>
       </div>
     </footer>
+     <script>
+      // 1: selecteer de button
+      const openSearchForm = document.querySelector(".search-button");
+      const theSearch = document.querySelector(".zoeken");
+      const closeSearchForm = document.querySelector(".terug-button");
+
+      // 2: wacht op een klik
+      openSearchForm.addEventListener("click", openSearch);
+      closeSearchForm.addEventListener("click", closeSearch);
+
+      // Het openen en sluiten van het zoek menu
+      function openSearch() {
+        theSearch.classList.add("toonSearch");
+      }
+
+      function closeSearch() {
+        theSearch.classList.remove("toonSearch"); //voor het verwijderen van de search balk zodra je op 'terug' klikt
+      }
+    </script>
   </body>
 </html>
