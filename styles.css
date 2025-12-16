@@ -1,7 +1,7 @@
+/* ------------------------------------ */
+/* 1. Imports en resets */
+/* ------------------------------------ */
 
-/* ------------------------------ */
-/* 1. IMPORTS & RESETS            */
-/* ------------------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
 
 * {
@@ -10,17 +10,9 @@
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   background-color: #d9d9d9;
   line-height: 1.5;
-}
-
-main {
-  padding-bottom: 30px;
 }
 
 p {
@@ -32,19 +24,21 @@ p {
   left: -9999px;
 }
 
-/* ------------------------------ */
-/* 2. TYPOGRAFIE & LINKS          */
-/* ------------------------------ */
-li, a {
+main{
+padding-bottom: 30px;
+}
+
+/* ------------------------------------ */
+/* 2. Algemene tekst en links */
+/* ------------------------------------ */
+
+li,
+a {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #000;
+  color: #000000;
   text-decoration: none;
-}
-
-h1, h2 {
-  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
@@ -52,28 +46,16 @@ h2 {
   padding: 10px;
 }
 
-.headingg {
-  font-family: "Montserrat", sans-serif;
-}
+/* ------------------------------------ */
+/* 3. Header + navigatie */
+/* ------------------------------------ */
 
-ul {
-  list-style: none;
-  align-items: center;
-}
-
-/* ------------------------------ */
-/* 3. HEADER & NAVIGATIE          */
-/* ------------------------------ */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 5%;
   background-color: #d9d9d9;
-}
-
-nav {
-  position: relative;
 }
 
 .navlogo {
@@ -88,10 +70,7 @@ nav {
 .navlogo p {
   font-size: 11px;
   text-align: center;
-}
-
-@media (min-width: 375px) {
-  .navlogo p {
+  @media (min-width: 375px) {
     font-size: 13px;
   }
 }
@@ -105,69 +84,89 @@ nav {
   max-width: 80px;
 }
 
+
+nav {
+  position: relative;
+}
+
+/* Links in desktopmenu */
 .links {
+  list-style: none;
   display: flex;
 }
 
 .links li {
+  display: flex;
   padding: 0 20px;
 }
 
 .links li a {
-  transition: color 0.3s ease;
+  transition: all 0.3s ease 0s;
 }
 
 .links li a:hover {
   color: var(--primary-color-dark);
-}
 
-@media (max-width: 925px) {
-  .links li a:hover {
+  @media (max-width: 925px) {
     color: var(--secondary-color-lightmode);
   }
 }
 
-/* Hamburger / popover */
+/* Hamburger button */
 button[popovertarget="menu"] {
   all: unset;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+button[popovertarget="menu"] label{
+margin: 0 auto;
 }
 
-@media (min-width: 925px) {
-  button[popovertarget="menu"] {
+/* Verberg contactlink op desktop */
+#contacthref {
+  @media (min-width: 925px) {
     display: none;
   }
+}
 
-  #contacthref {
-    display: none;
-  }
-
-  nav[popover] {
+/* Popover navigatie styling */
+nav[popover] {
+  @media (min-width: 925px) {
     display: block;
     border: none;
     background-color: #d9d9d9;
   }
+}
 
-  nav[popover] .links {
+nav[popover] .links {
+  @media (min-width: 925px) {
+    display: flex;
     flex-direction: row;
   }
 }
 
+/* Close menu knop */
 .close-menu {
+  background-color: var(---primary-color-dark);
   all: unset;
   position: absolute;
   right: 1em;
-  background-color: var(--primary-color-dark);
 }
 
+/* Open popover */
 :popover-open {
   display: flex;
-  position: fixed;
   height: 100%;
   width: 100%;
+  background-color: var(--primary-color-dark);
+  position: fixed;
   max-width: 28em;
   margin-left: auto;
-  background-color: var(--primary-color-dark);
 }
 
 :popover-open ul {
@@ -180,36 +179,37 @@ button[popovertarget="menu"] {
   font-size: 30px;
 }
 
-/* ------------------------------ */
-/* 4. ZOEK OVERLAY                */
-/* ------------------------------ */
+/* Zoek button */
 button {
   all: unset;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.zoeken {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(98, 98, 98, 0.8);
-  translate: 0% -100%;
-  transition: translate 1s;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .zoeken.toonSearch {
-  translate: 0% 0%;
+  translate: 0% 0%; /* Search scherm komt in beeld na klik */
 }
 
 .displayy {
   display: flex;
+  flex-direction: row;
   gap: 10px;
+}
+.zoeken {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: translate 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(98, 98, 98, 0.8);
+  translate: 0% -100%; /*Search scherm verdwijnt buiten beeld*/
 }
 
 input[type="search"] {
@@ -219,93 +219,251 @@ input[type="search"] {
 
 .zoeken input::placeholder {
   text-transform: uppercase;
+  text-align: start;
+}
+
+search.zoeken h2 {
+  color: white;
+  padding-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  align-items: center;
 }
 
 .terug-button {
   all: unset;
   color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
 }
-
-.terug-button:hover {
-  cursor: pointer;
+.search-button{
+  display: flex;
+  flex-direction: column;
 }
-
-.search-button img {
+.search-button img{
   width: 50px;
   height: 50px;
 }
 
-/* ------------------------------ */
-/* 5. CTA & KNOPPEN               */
-/* ------------------------------ */
+.feedback {
+  color: var(--primary-color-dark)
+}
+/* ------------------------------------ */
+/* 4. CTA knoppen */
+/* ------------------------------------ */
+
 .cta {
   display: none;
-}
 
-@media (min-width: 925px) {
-  .cta {
+  @media (min-width: 925px) {
     display: inline-block;
     background: var(--primary-color-dark);
-    color: #fff;
+    color: white;
     padding: 10px 25px;
     border-radius: 25px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
   }
-}
 
-.cta:hover {
-  background: var(--secondary-color-darkmode);
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
 }
 
 #hrefbut {
   background: var(--primary-color-dark);
   color: white;
   padding: 10px 30px;
+  border: none;
   border-radius: 20px;
+  cursor: pointer;
   font-size: 16px;
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
 }
 
-#hrefbut:hover {
-  background: var(--secondary-color-darkmode);
-}
 
-/* ------------------------------ */
-/* 6. PAGINA SPECIFIEK            */
-/* ------------------------------ */
-main {
-  max-width: 1300px;
-  padding-left: 100px;
-  padding-right: 10px;
-}
+/* ------------------------------------ */
+/* 5. Banner */
+/* ------------------------------------ */
 
-main img {
-  max-width: 500px;
-  width: 100%;
-}
-
-.wrapper,
-.wrapper2 {
+.banner {
+  padding: 6.5rem 0;
+  background-image: url("./fotos/banner.jpg");
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 3px solid black;
+  color: white;
+  font-family: inter;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   gap: 2rem;
 }
 
-.wrapper2 {
-  flex-direction: row-reverse;
+.banner,
+.banner a {
+  color: white;
 }
 
-#feedback {
-  color: var(--primary-color-dark);
+.banner h2 {
+  font-family: "Montserrat", sans-serif;
 }
 
-/* ------------------------------ */
-/* 7. FOOTER                      */
-/* ------------------------------ */
+/* ------------------------------------ */
+/* 6. Artikelen */
+/* ------------------------------------ */
+
+#artikelen {
+  h2 {
+    grid-column: 1/ -1;
+  }
+
+  .artikel:nth-of-type(3) {
+    grid-column: span 2;
+  }
+
+  @media (min-width: 925px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1100px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .artikel:nth-of-type(3) {
+      grid-column: span 1;
+    }
+  }
+}
+
+.artikel {
+  max-width: 15rem;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+}
+
+.artikel a {
+  color: #2b5e60;
+  display: block;
+  margin-top: 10px;
+}
+
+#nieuwsheader {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ------------------------------------ */
+/* 7. Intro sectie */
+/* ------------------------------------ */
+
+.welkom {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+#intro {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
+  #intro {
+    flex-direction: row;
+  }
+}
+
+.intro-foto {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .intro-foto {
+    min-height: 5rem;
+    min-width: 5rem;
+    max-width: 80rem;
+    max-height: 40rem;
+  }
+}
+
+/* ------------------------------------ */
+/* 8. Scholen sectie */
+/* ------------------------------------ */
+
+.deelbutton{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: var(--primary-color-dark);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.deelbutton:hover{
+background: var(--secondary-color-darkmode);
+}
+
+.deelscholen {
+  @media (min-width: 1189px) {
+    display: flex;
+    flex-direction: row;
+  }
+   display: none;
+}
+
+.yay{
+  display: block;
+  padding-top: 20px;
+}
+
+.deelscholen img {
+
+
+    padding-bottom: 15px;
+
+}
+
+#scholen img {
+  display: none;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.headingscholen {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ------------------------------------ */
+/* 9. Footer */
+/* ------------------------------------ */
+
 footer {
   background: var(--primary-color-dark);
   color: white;
   padding: 20px;
+  list-style-type: none;
 }
 
 footer .container {
@@ -316,8 +474,10 @@ footer .container {
 
 footer ul {
   display: flex;
-  justify-content: center;
+  list-style: none;
+  padding-left: 0;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 footer li {
@@ -327,17 +487,22 @@ footer li {
 
 footer a {
   font-size: 14px;
+  font-weight: 500;
   color: white;
+}
+
+footer p {
+  text-align: center;
 }
 
 .contact {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-
 .emailicon {
-  max-width: 100px;
   width: 100%;
+  max-width: 100px;
 }
