@@ -45,7 +45,6 @@ a {
 /* 3. HEADER / NAV / BURGER */
 /* ----------------------------------- */
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -66,10 +65,7 @@ header {
 .navlogo p {
   font-size: 11px;
   text-align: center;
-}
-
-@media (min-width: 375px) {
-  .navlogo p {
+  @media (min-width: 375px) {
     font-size: 13px;
   }
 }
@@ -79,29 +75,16 @@ header {
   outline-offset: 4px;
 }
 
-#logotekst {
-  /* krijgt styling via p en .navlogo p */
-}
-
 .hamburger {
   max-width: 80px;
 }
 
-button[popovertarget="menu"] {
-  all: unset;
-  cursor: pointer;
-}
-
-@media (min-width: 925px) {
-  button[popovertarget="menu"] {
-    display: none;
-  }
-}
 
 nav {
   position: relative;
 }
 
+/* Links in desktopmenu */
 .links {
   list-style: none;
   display: flex;
@@ -118,20 +101,37 @@ nav {
 
 .links li a:hover {
   color: var(--primary-color-dark);
-}
 
-@media (max-width: 925px) {
-  .links li a:hover {
+  @media (max-width: 925px) {
     color: var(--secondary-color-lightmode);
   }
 }
 
-/* attribuutselector */
-nav[popover] {
+/* Hamburger button */
+button[popovertarget="menu"] {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+button[popovertarget="menu"] label{
+margin: 0 auto;
 }
 
-@media (min-width: 925px) {
-  nav[popover] {
+/* Verberg contactlink op desktop */
+#contacthref {
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+
+/* Popover navigatie styling */
+nav[popover] {
+  @media (min-width: 925px) {
     display: block;
     border: none;
     background-color: #d9d9d9;
@@ -139,24 +139,13 @@ nav[popover] {
 }
 
 nav[popover] .links {
-}
-
-@media (min-width: 925px) {
-  nav[popover] .links {
+  @media (min-width: 925px) {
     display: flex;
     flex-direction: row;
   }
 }
 
-#contacthref {
-}
-
-@media (min-width: 925px) {
-  #contacthref {
-    display: none;
-  }
-}
-
+/* Close menu knop */
 .close-menu {
   background-color: var(---primary-color-dark);
   all: unset;
@@ -164,6 +153,7 @@ nav[popover] .links {
   right: 1em;
 }
 
+/* Open popover */
 :popover-open {
   display: flex;
   height: 100%;
@@ -184,9 +174,85 @@ nav[popover] .links {
   font-size: 30px;
 }
 
-/* CTA-knop in header */
+/* Zoek button */
+button {
+  all: unset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.zoeken.toonSearch {
+  translate: 0% 0%; /* Search scherm komt in beeld na klik */
+}
+
+.displayy {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.zoeken {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: translate 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(98, 98, 98, 0.8);
+  translate: 0% -100%; /*Search scherm verdwijnt buiten beeld*/
+}
+
+input[type="search"] {
+  height: 3em;
+  width: 30em;
+}
+
+.zoeken input::placeholder {
+  text-transform: uppercase;
+  text-align: start;
+}
+
+search.zoeken h2 {
+  color: white;
+  padding-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+}
+
+.terug-button {
+  all: unset;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.search-button{
+  display: flex;
+  flex-direction: column;
+}
+.search-button img{
+  width: 50px;
+  height: 50px;
+}
+
+.feedback {
+  color: var(--primary-color-dark)
+}
+/* ------------------------------------ */
+/* 4. CTA knoppen */
+/* ------------------------------------ */
+
 .cta {
   display: none;
+
   @media (min-width: 925px) {
     display: inline-block;
     background: var(--primary-color-dark);
@@ -202,7 +268,20 @@ nav[popover] .links {
   }
 }
 
-/* Einde header */
+#hrefbut {
+  background: var(--primary-color-dark);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
+}
+
 
 /* ----------------------------------- */
 /* 4. OVER ONS SECTIE */

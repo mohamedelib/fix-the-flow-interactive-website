@@ -148,10 +148,6 @@ header {
   background-color: #d9d9d9;
 }
 
-nav {
-  position: relative;
-}
-
 .navlogo {
   cursor: pointer;
   margin-right: auto;
@@ -164,10 +160,7 @@ nav {
 .navlogo p {
   font-size: 11px;
   text-align: center;
-}
-
-@media (min-width: 375px) {
-  .navlogo p {
+  @media (min-width: 375px) {
     font-size: 13px;
   }
 }
@@ -181,7 +174,12 @@ nav {
   max-width: 80px;
 }
 
-/* Menu links */
+
+nav {
+  position: relative;
+}
+
+/* Links in desktopmenu */
 .links {
   list-style: none;
   display: flex;
@@ -198,56 +196,59 @@ nav {
 
 .links li a:hover {
   color: var(--primary-color-dark);
-}
 
-@media (max-width: 925px) {
-  .links li a:hover {
+  @media (max-width: 925px) {
     color: var(--secondary-color-lightmode);
   }
 }
 
-/* Popover navigation */
+/* Hamburger button */
 button[popovertarget="menu"] {
   all: unset;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+button[popovertarget="menu"] label{
+margin: 0 auto;
 }
 
-@media (min-width: 925px) {
-  button[popovertarget="menu"] {
+/* Verberg contactlink op desktop */
+#contacthref {
+  @media (min-width: 925px) {
     display: none;
   }
 }
 
-/* Hide contact link in desktop view */
-@media (min-width: 925px) {
-  #contacthref {
-    display: none;
-  }
-}
-
-/* Desktop nav replaces popover */
-@media (min-width: 925px) {
-  nav[popover] {
+/* Popover navigatie styling */
+nav[popover] {
+  @media (min-width: 925px) {
     display: block;
     border: none;
     background-color: #d9d9d9;
   }
+}
 
-  nav[popover] .links {
+nav[popover] .links {
+  @media (min-width: 925px) {
     display: flex;
     flex-direction: row;
   }
 }
 
-/* Close-menu button */
+/* Close menu knop */
 .close-menu {
-  background-color: var(--primary-color-dark);
+  background-color: var(---primary-color-dark);
   all: unset;
   position: absolute;
   right: 1em;
 }
 
-/* Popover open state */
+/* Open popover */
 :popover-open {
   display: flex;
   height: 100%;
@@ -268,7 +269,6 @@ button[popovertarget="menu"] {
   font-size: 30px;
 }
 
-/* searchbutton */
 /* Zoek button */
 button {
   all: unset;
@@ -329,25 +329,26 @@ ul {
     cursor: pointer;
   }
 }
-
+.search-button{
+  display: flex;
+  flex-direction: column;
+}
 .search-button img{
   width: 50px;
   height: 50px;
 }
-#feedback {
-  color: var(--secondary-color-lightmode)
-}
 
-/* -------------------------------------------------- */
-/* 7. CTA BUTTON */
-/* -------------------------------------------------- */
+.feedback {
+  color: var(--primary-color-dark)
+}
+/* ------------------------------------ */
+/* 4. CTA knoppen */
+/* ------------------------------------ */
 
 .cta {
   display: none;
-}
 
-@media (min-width: 925px) {
-  .cta {
+  @media (min-width: 925px) {
     display: inline-block;
     background: var(--primary-color-dark);
     color: white;
@@ -356,16 +357,26 @@ ul {
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
   }
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
 }
 
-.cta:hover {
-  background: #1f4648;
+#hrefbut {
+  background: var(--primary-color-dark);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
 }
 
-/* Button hover */
-button:hover {
-  background-color: rgba(0, 136, 169, 0.8);
-}
 
 /* -------------------------------------------------- */
 /* 8. FOOTER */

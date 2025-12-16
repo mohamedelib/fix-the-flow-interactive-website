@@ -59,38 +59,27 @@ main h1 {
 /* 3. HEADER / NAV / BURGER */
 /* -------------------------------------- */
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 5%;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
-nav {
-  position: relative;
-}
-
-.navlogo{
+.navlogo {
   cursor: pointer;
   margin-right: auto;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#logotekst{
-  color: black;
-}
-
-.navlogo p{
+.navlogo p {
   font-size: 11px;
   text-align: center;
-}
-
-@media (min-width: 375px) {
-  .navlogo p{
+  @media (min-width: 375px) {
     font-size: 13px;
   }
 }
@@ -100,16 +89,22 @@ nav {
   outline-offset: 4px;
 }
 
-.hamburger{
+.hamburger {
   max-width: 80px;
 }
 
-.links{
-  list-style: none;
-  display:flex;
+
+nav {
+  position: relative;
 }
 
-.links li{
+/* Links in desktopmenu */
+.links {
+  list-style: none;
+  display: flex;
+}
+
+.links li {
   display: flex;
   padding: 0 20px;
 }
@@ -119,44 +114,41 @@ nav {
 }
 
 .links li a:hover {
-  color:var(--primary-color-dark);
+  color: var(--primary-color-dark);
 
   @media (max-width: 925px) {
-    color: var(--secondary-color-lightmode)
+    color: var(--secondary-color-lightmode);
   }
 }
 
-/* CTA in header */
+/* Hamburger button */
+button[popovertarget="menu"] {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 
-.cta {
-  display: none;
+  @media (min-width: 925px) {
+    display: none;
+  }
+}
+button[popovertarget="menu"] label{
+margin: 0 auto;
 }
 
-@media (min-width: 925px) {
-  .cta {
-    display: inline-block;
-    background: var(--primary-color-dark);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
+/* Verberg contactlink op desktop */
+#contacthref {
+  @media (min-width: 925px) {
+    display: none;
   }
 }
 
-.cta:hover {
-  background: var(--primary-color-dark)
-}
-
-/* -------------------------------------- */
-/* 4. POPOVER NAVIGATIE */
-/* -------------------------------------- */
-
+/* Popover navigatie styling */
 nav[popover] {
   @media (min-width: 925px) {
     display: block;
     border: none;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
   }
 }
 
@@ -167,27 +159,15 @@ nav[popover] .links {
   }
 }
 
-button[popovertarget="menu"] {
-  all: unset;      /* geen witte rand / default button styling */
-  cursor: pointer;
-  @media (min-width: 925px) {
-    display: none; /* hamburger verbergen op desktop */
-  }
-}
-
-#contacthref{
-  @media (min-width: 925px) {
-    display: none;
-  }
-}
-
+/* Close menu knop */
 .close-menu {
-  background-color: var(--primary-color-dark);
+  background-color: var(---primary-color-dark);
   all: unset;
   position: absolute;
   right: 1em;
 }
 
+/* Open popover */
 :popover-open {
   display: flex;
   height: 100%;
@@ -198,7 +178,7 @@ button[popovertarget="menu"] {
   margin-left: auto;
 }
 
-:popover-open ul{
+:popover-open ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,10 +187,6 @@ button[popovertarget="menu"] {
 :popover-open a {
   font-size: 30px;
 }
-
-/* nav[popover] .links li a:hover{
- color: var(--secondary-color-lightmode) 
-} */
 
 /* Zoek button */
 button {
@@ -272,11 +248,54 @@ ul {
     cursor: pointer;
   }
 }
-
+.search-button{
+  display: flex;
+  flex-direction: column;
+}
 .search-button img{
   width: 50px;
   height: 50px;
 }
+
+.feedback {
+  color: var(--primary-color-dark)
+}
+/* ------------------------------------ */
+/* 4. CTA knoppen */
+/* ------------------------------------ */
+
+.cta {
+  display: none;
+
+  @media (min-width: 925px) {
+    display: inline-block;
+    background: var(--primary-color-dark);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
+}
+
+#hrefbut {
+  background: var(--primary-color-dark);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background: var(--secondary-color-darkmode);
+  }
+}
+
 
 /* -------------------------------------- */
 /* 5. PAGINA SPECIFIEK (ASSOCIATE DEGREE) */

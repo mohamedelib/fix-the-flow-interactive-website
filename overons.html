@@ -8,47 +8,95 @@
     </head>
 
     <body>
-    <header>
-  <!-- Header -->
-       
-      <a href="/" class="navlogo"> 
-        <img src="./fotos/logo-klein.png" alt="Associate Degree" width="70" height="50">
-            <p id="logotekst"> Overlegplatform Associate degrees</p>
+   <header>
+      <!-- Header -->
+
+      <a href="/" class="navlogo">
+        <img
+          src="./fotos/logo-klein.png"
+          alt="Associate Degree"
+          width="70"
+          height="50"
+        />
+        <p id="logotekst">Overlegplatform Associate degrees</p>
       </a>
-            
+
       <button popovertarget="menu">
-        <img class="hamburger" src="./fotos/hamburgerr.png">
+        <img class="hamburger" src="./fotos/hamburgerr.png" />
+        <label>Menu</label>
       </button>
-            
+
       <nav popover id="menu" aria-label="Hoofdmenu">
-         <button class="close-menu" popovertarget="menu" popovertargetaction="hide">
-            <img  class="kruis" src="./fotos/kruis.png" width="80px" height="80px">
-      </button>
-      <ul class="links">
-        <li class="nav-item">
-            <a href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="./associatedegree.html">Associate Degree</a>
-        </li>
-        <li class="nav-item">
-          <a href="#">Nieuws</a>
-        </li>
-        <li class="nav-item">
-          <a href="#">Evenementen</a>
-        </li>
-        <li class="nav-item">
-          <a href="./overons.html">Over ons</a>
-        </li>
-        <li class="nav-item" id="contacthref">
-          <a href="./contact.html">Contact</a>
-        </li>
-                    
-      </ul>
-                
+        <button
+          class="close-menu"
+          popovertarget="menu"
+          popovertargetaction="hide"
+        >
+          <img
+            class="kruis"
+            src="./fotos/kruis.png"
+            width="80px"
+            height="80px"
+          />
+        </button>
+        <ul class="links">
+          <li class="nav-item">
+            <a class="feedback" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="./associatedegree.html">Associate Degree</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Nieuws</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Evenementen</a>
+          </li>
+          <li class="nav-item">
+            <a href="./overons.html">Over ons</a>
+          </li>
+          <li class="nav-item" id="contacthref">
+            <a href="./contact.html">Contact</a>
+          </li>
+              <!-- search balk -->
+          <li class="nav-item">
+            <button class="search-button">
+              <img src="./fotos/search.png" alt="zoek icoon" />
+              <label>zoeken</label>
+            </button>
+          </li>
+        </ul>
+
+        <search class="zoeken">
+          <button class="terug-button">
+            <img
+              src="fotos/kruis.png"
+              alt="Venster sluiten"
+              width="20"
+              height="20"
+            />
+            Sluit
+          </button>
+
+          <h2>Zoek relevante informatie met trefwoorden</h2>
+          <form class="displayy">
+            <label>
+              <input type="search" placeholder="Zoek een artikel" />
+            </label>
+            <a href="index.html">
+              <img
+                src="fotos/searchh.png"
+                alt="zoek icoon"
+                class="zoekbut"
+                width="50"
+              />
+            </a>
+          </form>
+        </search>
+        <!-- einde search balk -->
       </nav>
-          <a class="cta" href="contact.html">Contact</a>
-      </header>
+      <a class="cta" href="contact.html">Contact</a>
+    </header>
       <main>
         <h1 class="visually-hidden">Overlegplatform Associate Degree</h1>
         <section id="overons">
