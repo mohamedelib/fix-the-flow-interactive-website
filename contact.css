@@ -419,3 +419,7 @@ footer p {
   width: 100%;
   max-width: 100px;
 }
+
+#feedback2{
+color: var(--secondary-color-lightmode);
+}

@@ -294,7 +294,7 @@ ul {
 
 .banner {
   padding: 6.5rem 0;
-  background-image: url("./fotos/banner.jpg");
+  background-image: url("./fotos/banner.png");
   background-origin: padding-box;
   background-repeat: no-repeat;
   background-position: center;
@@ -505,4 +505,8 @@ footer p {
 .emailicon {
   width: 100%;
   max-width: 100px;
+}
+
+#feedback2{
+color: var(--secondary-color-lightmode);
 }
