@@ -8,7 +8,7 @@
       href="https://isaaceswa.github.io/look-and-feel-styleguide/styleguide-ad-connect.css"
     />
     <link rel="stylesheet" href="styles.css" />
-  <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
   </head>
 
   <body>
@@ -62,7 +62,7 @@
           <li class="nav-item" id="contacthref">
             <a href="./contact.html">Contact</a>
           </li>
-              <!-- search balk -->
+          <!-- search balk -->
           <li class="nav-item">
             <button class="search-button">
               <img src="./fotos/search.png" alt="zoek icoon" />
@@ -169,6 +169,49 @@
         </div>
       </section>
 
+      <div class="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="./fotos/logo_1.png" alt="Logo 1" /></div>
+          <div class="slide"><img src="./fotos/logo_2.png" alt="Logo 2" /></div>
+          <div class="slide"><img src="./fotos/logo_3.png" alt="Logo 3" /></div>
+          <div class="slide"><img src="./fotos/logo_4.png" alt="Logo 4" /></div>
+          <div class="slide"><img src="./fotos/logo_5.png" alt="Logo 5" /></div>
+          <div class="slide"><img src="./fotos/logo_6.png" alt="Logo 6" /></div>
+          <div class="slide"><img src="./fotos/logo_7.png" alt="Logo 7" /></div>
+          <div class="slide"><img src="./fotos/logo_8.png" alt="Logo 8" /></div>
+          <div class="slide"><img src="./fotos/logo_9.png" alt="Logo 9" /></div>
+          <div class="slide">
+            <img src="./fotos/logo_10.png" alt="Logo 10" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_11.png" alt="Logo 11" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_12.png" alt="Logo 12" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_13.png" alt="Logo 13" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_14.png" alt="Logo 14" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_15.png" alt="Logo 15" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_16.png" alt="Logo 16" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_17.png" alt="Logo 17" />
+          </div>
+          <div class="slide">
+            <img src="./fotos/logo_18.png" alt="Logo 18" />
+          </div>
+        </div>
+
+        <button class="nav prev" onclick="prevSlide()">‹</button>
+        <button class="nav next" onclick="nextSlide()">›</button>
+      </div>
       <!-- Deelnemende scholen -->
       <section id="scholen">
         <h2 class="headingscholen">Deelnemende hogescholen</h2>
@@ -216,7 +259,7 @@
       </div>
       <div class="contact">
         <p><strong>Contact</strong></p>
-        <p> Schrijf ons een mail, door hieronder op het icoon te klikken!</p>
+        <p>Schrijf ons een mail, door hieronder op het icoon te klikken!</p>
         <a href="mailto:platformassociatedegrees@outlook.com"
           ><img class="emailicon" src="./fotos/email.png" />
         </a>
@@ -241,6 +284,29 @@
       function closeSearch() {
         theSearch.classList.remove("toonSearch"); //voor het verwijderen van de search balk zodra je op 'terug' klikt
       }
+    </script>
+
+    <!-- slider -->
+    <script>
+      let index = 0;
+      const slides = document.getElementById("slides");
+      const total = slides.children.length;
+
+      function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function nextSlide() {
+        index = (index + 1) % total;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        index = (index - 1 + total) % total;
+        updateSlider();
+      }
+
+      setInterval(nextSlide, 4000);
     </script>
   </body>
 </html>
